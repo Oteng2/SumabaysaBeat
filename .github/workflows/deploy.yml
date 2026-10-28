@@ -28,14 +28,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build site
-        run: npm run build -- --base-href /beatzone/
+        run: npm run build -- --base-href /SumabaysaBeat/
       - name: Prepare Pages artifact
         run: |
-          cp dist/project/index.html dist/project/404.html
+          cp dist/project/browser/index.html dist/project/browser/404.html
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/project
+          path: dist/project/browser
 
   deploy:
     environment:
